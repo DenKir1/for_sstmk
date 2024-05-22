@@ -6,8 +6,8 @@ import os
 
 address = "sstmk.ru"
 
-response = os.popen(f"ping {address} ").read()
-
+response = os.popen(f"ping -c 4 {address} ").read()
+print(response)
 if ("Request timed out." or "unreachable") in response:
     print(f"Ping Unsuccessful, Host is DOWN.")
 else:
